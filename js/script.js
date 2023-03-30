@@ -20,7 +20,10 @@ const {createApp} = Vue;
 createApp({
     data(){
         return {
-            shoppingCart: [
+            shoppingCart: [{
+                text: 'bread',
+                done: false
+            }
                 
 
 
