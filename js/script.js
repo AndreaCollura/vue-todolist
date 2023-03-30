@@ -29,7 +29,7 @@ createApp({
 
             ],
             newListEle:''
-            // error: false
+            
         }
     },
     methods:{
@@ -40,7 +40,7 @@ createApp({
                 done: false
             }
             if (this.product != '') this.shoppingCart.push(newProduct)
-            // else this.error = true
+            
             
             this.newListEle = ''
 
@@ -54,7 +54,7 @@ createApp({
 
                 this.shoppingCart[index].done = true;
             }else {
-                this.shoppingCart[index].done = false
+                this.shoppingCart[index].done = false;
             }
             
         }

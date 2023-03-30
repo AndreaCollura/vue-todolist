@@ -16,28 +16,22 @@
                 <div id="title" class="text-center">
                     <h1 class="text-center text-uppercase mb-5">my cart</h1>
                     <i class="fa-solid fa-cart-shopping"></i>
-                    
-                    
                 </div>
                 <div class="container d-flex justify-content-center mb-4">
-                    <input placeholder="what you need do add?" class="form-control" type="text" name=" " id="" v-model="newListEle" @keyup.enter="addProduct">
-                    <button class="btn btn-success " @click="addProduct"><i class="fa-solid fa-cart-plus"></i></button>
+                    <input  placeholder="what you need do add?" class="form-control" type="text" name="text" id="" v-model="newListEle" @keyup.enter="addProduct">
+                    <button class="btn btn-success" @click="addProduct"><i class="fa-solid fa-cart-plus"></i></button>
                 </div>
-                <ul class="list-group " v-if="shoppingCart.length > 0">
-                    <li class=" d-flex justify-content-between" v-for="(product, index) in shoppingCart " @click="confirmProduct(index)" :class="product.done ? 'alert alert-success': 'alert alert-light'">
+                <ul class="list-group" v-if="shoppingCart.length > 0">
+                    <li  class=" d-flex justify-content-between" v-for="(product, index) in shoppingCart " @click="confirmProduct(index)" :class="product.done ? 'alert alert-success': 'alert alert-light'">
                         <span>{{product.text}}</span>
                         <button @click.stop="deleteProduct(index)"><i class="fa-solid fa-trash-can"></i></button>
                     </li>
                 </ul>
-                    <div v-else class="d-flex flex-column">
-                        <h3 class="text-center text-uppercase">nothing here!</h3>
-                        <img class="w-75 " src="./img/AccurateUnfinishedBergerpicard.webp" alt="travolta meme">
-                    </div>
-                    
-
+                <div v-else class="d-flex flex-column">
+                    <h3 class="text-center text-uppercase">nothing here!</h3>
+                    <img class="w-75 " src="./img/AccurateUnfinishedBergerpicard.webp" alt="travolta meme">
+                </div>
             </div>
-            
-
         </div>
     </div>
 
