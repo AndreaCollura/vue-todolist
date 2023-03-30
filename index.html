@@ -21,7 +21,8 @@
                     <input  placeholder="what you need do add?" class="form-control" type="text" name="text" id="" v-model="newListEle" @keyup.enter="addProduct">
                     <button class="btn btn-success" @click="addProduct"><i class="fa-solid fa-cart-plus"></i></button>
                 </div>
-                <ul class="list-group" v-if="shoppingCart.length > 0">
+                <h3 class="mb-3" v-if="error">wrong input</h3>
+                <ul class="list-group" v-if="shoppingCart.length > 0 ">
                     <li  class=" d-flex justify-content-between" v-for="(product, index) in shoppingCart " @click="confirmProduct(index)" :class="product.done ? 'alert alert-success': 'alert alert-light'">
                         <span>{{product.text}}</span>
                         <button @click.stop="deleteProduct(index)"><i class="fa-solid fa-trash-can"></i></button>

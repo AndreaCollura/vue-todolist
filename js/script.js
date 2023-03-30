@@ -28,20 +28,29 @@ createApp({
 
 
             ],
-            newListEle:''
-            
+            newListEle:'',
+            error: false
         }
     },
     methods:{
         addProduct(){
 
+
+
+            if(this.newListEle === ''){
+                this.error= true
+
+                console.log('elem non valido');
+                return 
+            } 
+            
             const newProduct = {
                 text: this.newListEle,
                 done: false
             }
             if (this.product != '') this.shoppingCart.push(newProduct)
             
-            
+            this.error = false
             this.newListEle = ''
 
         },
